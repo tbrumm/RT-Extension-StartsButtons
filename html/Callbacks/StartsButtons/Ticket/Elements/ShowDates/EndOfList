@@ -1,0 +1,101 @@
+<tr>
+<td class="label" style="vertical-align: top;">Stall &amp;<br>Update Starts<br>Date to:</td>
+<td>
+<table>
+% my $starts;
+<tr>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+% $starts = $Ticket->StartsObj;
+% if ($starts->Unix == 0) { $starts->SetToNow; }
+% $starts->AddDays(1);
+<input type="hidden" name="Starts_Date" value="<% $starts->AsString %>">
+<input type="hidden" name="Status" value="stalled">
+<input type="submit" value="+1d" name="AddToStartsDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+% $starts = $Ticket->StartsObj;
+% if ($starts->Unix == 0) { $starts->SetToNow; }
+% $starts->AddDays(2);
+<input type="hidden" name="Starts_Date" value="<% $starts->AsString %>">
+<input type="hidden" name="Status" value="stalled">
+<input type="submit" value="+2d" name="AddToStartsDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+% $starts = $Ticket->StartsObj;
+% if ($starts->Unix == 0) { $starts->SetToNow; }
+% $starts->AddDays(3);
+<input type="hidden" name="Starts_Date" value="<% $starts->AsString %>">
+<input type="hidden" name="Status" value="stalled">
+<input type="submit" value="+3d" name="AddToStartsDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+% $starts = $Ticket->StartsObj;
+% if ($starts->Unix == 0) { $starts->SetToNow; }
+% $starts->AddDays(7);
+<input type="hidden" name="Starts_Date" value="<% $starts->AsString %>">
+<input type="hidden" name="Status" value="stalled">
+<input type="submit" value="+1w" name="AddToStartsDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+% $starts = $Ticket->StartsObj;
+% if ($starts->Unix == 0) { $starts->SetToNow; }
+% $starts->AddDays(30);
+<input type="hidden" name="Starts_Date" value="<% $starts->AsString %>">
+<input type="hidden" name="Status" value="stalled">
+<input type="submit" value="+1m" name="AddToStartsDate">
+</form>
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+<input type="hidden" name="Starts_Date" value="tomorrow">
+<input type="hidden" name="Status" value="stalled">
+<input type="submit" value="tomorrow" name="AddToStartsDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+<input type="hidden" name="Starts_Date" value="next monday">
+<input type="hidden" name="Status" value="stalled">
+<input type="submit" value="monday" name="AddToStartsDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+<input type="hidden" name="Starts_Date" value="0">
+<input type="submit" value="reset" name="AddToStartsDate">
+</form>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+
+
+
+<%ARGS>
+$Ticket => undef
+</%ARGS>
+
+

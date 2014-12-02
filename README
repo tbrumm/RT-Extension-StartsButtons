@@ -1,0 +1,51 @@
+NAME
+    RT-Extension-StartsButtons - shortcut buttons to quickly set Starts dates for
+    ticket
+
+DESCRIPTION
+    After installing this extension, on the ticket's page, you should see
+    new buttons to set the ticket Starts date.
+
+    The +1d, +2d, +3d, +1w, +1m buttons will advance the current Starts date
+    for the ticket by the corresponding time amount. If the Starts date is not
+    set at the moment, they will assume today's date as the base for the
+    advancement.
+
+    The tomorrow, next monday and reset buttons will set the Starts date to
+    tomorrow, next monday or reset it respectively.
+
+    All buttons except for the reset one will also set the ticket status to
+    Stalled. The reset button does not change the ticket status.
+
+INSTALLATION
+    perl Makefile.PL
+    make
+    make install
+        May need root permissions
+
+    Edit your /opt/rt4/etc/RT_SiteConfig.pm
+        Add this line:
+
+            Set(@Plugins, qw(RT::Extension::StartsButtons));
+
+        or add "RT::Extension::StartsButtons" to your existing @Plugins line.
+
+    Clear your mason cache
+            rm -rf /opt/rt4/var/mason_data/obj
+
+    Restart your webserver
+
+AUTHOR
+	Torsten Brumm <tbrumm@mac.com> based on original Idea from:
+    Daniel De Marco <ddm@didiemme.net>
+
+BUGS AND LIMITATIONS
+    No bugs have been reported.
+
+LICENSE AND COPYRIGHT
+	This software is Copyright (c) 2014 by Best Practical Solutions, LLC.
+	
+    This is free software, licensed under:
+
+      The GNU General Public License, Version 2, June 1991
+
