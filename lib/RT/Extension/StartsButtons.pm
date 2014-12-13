@@ -101,6 +101,17 @@ The "label" is the value shown on the button in the interface.  The
 "form value" is what an RT user would enter into the Starts field on
 the Dates page.
 
+=head2 $StartsButtonsResetLabel
+
+    Set( $StartsButtonsResetLabel, 'reset' );                   # default
+    Set( $StartsButtonsResetLabel, "\N{MULTIPLICATION SIGN}" ); # "x"
+    Set( $StartsButtonsResetLabel, '' );                        # hide button
+
+By default, the final button on the bottom row is labelled "reset" and
+removes the Starts date.  To change this button's label, set this value
+to a non-empty string.  To hide this button, set this value to an empty
+string.
+
 =head1 AUTHOR
 Torsten Brumm <tbrumm@mac.com>  based on original Idea from:
 Daniel De Marco <ddm@didiemme.net>

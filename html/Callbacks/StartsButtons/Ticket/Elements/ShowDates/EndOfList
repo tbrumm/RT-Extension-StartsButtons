@@ -53,13 +53,17 @@
 </form>
 </td>
 % }
+% my $reset_label = RT->Config->Get('StartsButtonsResetLabel');
+% $reset_label = 'reset' if not defined $reset_label;
+% if (length $reset_label) {
 <td>
 <form method="post" action="Display.html">
 <input type="hidden" name="id" value="<% $Ticket->id %>">
 <input type="hidden" name="Starts_Date" value="0">
-<input type="submit" value="reset" name="AddToStartsDate">
+<input type="submit" value="<% $reset_label %>" name="AddToStartsDate">
 </form>
 </td>
+% }
 </tr>
 </table>
 </td>
