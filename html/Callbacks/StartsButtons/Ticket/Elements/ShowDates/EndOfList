@@ -1,5 +1,7 @@
 <tr>
-<td class="label" style="vertical-align: top;">Stall &amp;<br>Update Starts<br>Date to:</td>
+% my $stall = RT->Config->Get('StartsButtonsStall');
+% $stall = 1 if not defined $stall;
+<td class="label" style="vertical-align: top;"><% $stall ? 'Stall &amp;<br>' : '' %>Update Starts<br>Date to:</td>
 <td>
 <table>
 % my $starts;
@@ -19,7 +21,9 @@
 %     if ($starts->Unix == 0) { $starts->SetToNow; }
 %     $starts->AddDays($num_days);
 <input type="hidden" name="Starts_Date" value="<% $starts->ISO( Timezone => 'user' ) %>">
+%     if ($stall) {
 <input type="hidden" name="Status" value="stalled">
+%     }
 <input type="submit" value="<% $label %>" name="AddToStartsDate">
 </form>
 </td>
@@ -37,7 +41,9 @@
 <form method="post" action="Display.html">
 <input type="hidden" name="id" value="<% $Ticket->id %>">
 <input type="hidden" name="Starts_Date" value="<% $new_value %>">
+%     if ($stall) {
 <input type="hidden" name="Status" value="stalled">
+%     }
 <input type="submit" value="<% $label %>" name="AddToStartsDate">
 </form>
 </td>

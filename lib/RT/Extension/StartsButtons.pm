@@ -44,6 +44,9 @@ Add this line:
 
 or add C<RT::Extension::StartsButtons> to your existing C<@Plugins> line.
 
+Optionally change the default settings described in L</CONFIGURATION>
+below.
+
 =item Clear your mason cache
 
     rm -rf /opt/rt4/var/mason_data/obj
@@ -51,6 +54,17 @@ or add C<RT::Extension::StartsButtons> to your existing C<@Plugins> line.
 =item Restart your webserver
 
 =back
+
+=head1 CONFIGURATION
+
+=head2 $StartsButtonsStall
+
+    Set( $StartsButtonsStall, 1 ); # default
+    Set( $StartsButtonsStall, 0 );
+
+By default, changing the Starts date results in the ticket being
+stalled.  To keep the current status, set this to a defined but false
+value.
 
 =head1 AUTHOR
 Torsten Brumm <tbrumm@mac.com>  based on original Idea from:
