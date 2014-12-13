@@ -113,6 +113,7 @@ to a non-empty string.  To hide this button, set this value to an empty
 string.
 
 =head1 AUTHOR
+
 Torsten Brumm <tbrumm@mac.com>  based on original Idea from:
 Daniel De Marco <ddm@didiemme.net>
 
