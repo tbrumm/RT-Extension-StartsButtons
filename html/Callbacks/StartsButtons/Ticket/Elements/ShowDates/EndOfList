@@ -9,6 +9,7 @@
 %     [ '+2d' =>  2 ],
 %     [ '+3d' =>  3 ],
 %     [ '+1w' =>  7 ],
+%     [ '+1m' => 30 ],
 % ) {
 %     my ($label, $num_days) = @$_;
 <td>
@@ -23,17 +24,6 @@
 </form>
 </td>
 % }
-<td>
-<form method="post" action="Display.html">
-<input type="hidden" name="id" value="<% $Ticket->id %>">
-% $starts = $Ticket->StartsObj;
-% if ($starts->Unix == 0) { $starts->SetToNow; }
-% $starts->AddDays(30);
-<input type="hidden" name="Starts_Date" value="<% $starts->ISO( Timezone => 'user' ) %>">
-<input type="hidden" name="Status" value="stalled">
-<input type="submit" value="+1m" name="AddToStartsDate">
-</form>
-</td>
 </tr>
 </table>
 <table>
