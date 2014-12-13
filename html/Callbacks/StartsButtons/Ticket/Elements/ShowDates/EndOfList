@@ -30,6 +30,7 @@
 <tr>
 % for (
 %     [ 'tomorrow' => 'tomorrow'    ],
+%     [ 'Monday'   => 'next Monday' ],
 % ) {
 %     my ($label, $new_value) = @$_;
 <td>
@@ -41,14 +42,6 @@
 </form>
 </td>
 % }
-<td>
-<form method="post" action="Display.html">
-<input type="hidden" name="id" value="<% $Ticket->id %>">
-<input type="hidden" name="Starts_Date" value="next monday">
-<input type="hidden" name="Status" value="stalled">
-<input type="submit" value="monday" name="AddToStartsDate">
-</form>
-</td>
 <td>
 <form method="post" action="Display.html">
 <input type="hidden" name="id" value="<% $Ticket->id %>">
