@@ -3,33 +3,36 @@
 % $stall = 1 if not defined $stall;
 <td class="label" style="vertical-align: top;"><% $stall ? 'Stall &amp;<br>' : '' %>Update Starts<br>Date to:</td>
 <td>
+% my $show_top_row = RT->Config->Get('StartsButtonsShowTopRow');
+% if ($show_top_row or not defined $show_top_row) {
 <table>
-% my $starts;
+%     my $starts;
 <tr>
-% for (
-%     [ '+1d' =>  1 ],
-%     [ '+2d' =>  2 ],
-%     [ '+3d' =>  3 ],
-%     [ '+1w' =>  7 ],
-%     [ '+1m' => 30 ],
-% ) {
-%     my ($label, $num_days) = @$_;
+%     for (
+%         [ '+1d' =>  1 ],
+%         [ '+2d' =>  2 ],
+%         [ '+3d' =>  3 ],
+%         [ '+1w' =>  7 ],
+%         [ '+1m' => 30 ],
+%     ) {
+%         my ($label, $num_days) = @$_;
 <td>
 <form method="post" action="Display.html">
 <input type="hidden" name="id" value="<% $Ticket->id %>">
-%     $starts = $Ticket->StartsObj;
-%     if ($starts->Unix == 0) { $starts->SetToNow; }
-%     $starts->AddDays($num_days);
+%         $starts = $Ticket->StartsObj;
+%         if ($starts->Unix == 0) { $starts->SetToNow; }
+%         $starts->AddDays($num_days);
 <input type="hidden" name="Starts_Date" value="<% $starts->ISO( Timezone => 'user' ) %>">
-%     if ($stall) {
+%         if ($stall) {
 <input type="hidden" name="Status" value="stalled">
-%     }
+%         }
 <input type="submit" value="<% $label %>" name="AddToStartsDate">
 </form>
 </td>
-% }
+%     }
 </tr>
 </table>
+% }
 <table>
 <tr>
 % for (

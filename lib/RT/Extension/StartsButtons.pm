@@ -66,6 +66,15 @@ By default, changing the Starts date results in the ticket being
 stalled.  To keep the current status, set this to a defined but false
 value.
 
+=head2 $StartsButtonsShowTopRow
+
+    Set( $StartsButtonsShowTopRow, 1 ); # default
+    Set( $StartsButtonsShowTopRow, 0 );
+
+By default, the top row of buttons (for changing the Starts date
+relatively) is shown.  To hide it, set this to a defined but false
+value.
+
 =head1 AUTHOR
 Torsten Brumm <tbrumm@mac.com>  based on original Idea from:
 Daniel De Marco <ddm@didiemme.net>
