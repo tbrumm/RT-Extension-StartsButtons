@@ -17,7 +17,7 @@
 %     ) {
 %         my ($label, $num_days) = @$_;
 <td>
-<form method="post" action="Display.html">
+<form method="post" action="Display.html?id=<% $Ticket->id %>">
 <input type="hidden" name="id" value="<% $Ticket->id %>">
 %         $starts = $Ticket->StartsObj;
 %         if ($starts->Unix == 0) { $starts->SetToNow; }
@@ -43,7 +43,7 @@
 % for (@$bottom_buttons) {
 %     my ($label, $new_value) = @$_;
 <td>
-<form method="post" action="Display.html">
+<form method="post" action="Display.html?id=<% $Ticket->id %>">
 <input type="hidden" name="id" value="<% $Ticket->id %>">
 <input type="hidden" name="Starts_Date" value="<% $new_value %>">
 %     if ($stall) {
@@ -57,7 +57,7 @@
 % $reset_label = 'reset' if not defined $reset_label;
 % if (length $reset_label) {
 <td>
-<form method="post" action="Display.html">
+<form method="post" action="Display.html?id=<% $Ticket->id %>">
 <input type="hidden" name="id" value="<% $Ticket->id %>">
 <input type="hidden" name="Starts_Date" value="0">
 <input type="submit" value="<% $reset_label %>" name="AddToStartsDate">
