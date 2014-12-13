@@ -35,10 +35,12 @@
 % }
 <table>
 <tr>
-% for (
+% my $bottom_buttons = RT->Config->Get('StartsButtonsBottomButtons');
+% $bottom_buttons ||= [
 %     [ 'tomorrow' => 'tomorrow'    ],
 %     [ 'Monday'   => 'next Monday' ],
-% ) {
+% ];
+% for (@$bottom_buttons) {
 %     my ($label, $new_value) = @$_;
 <td>
 <form method="post" action="Display.html">

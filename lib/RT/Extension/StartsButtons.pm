@@ -75,6 +75,32 @@ By default, the top row of buttons (for changing the Starts date
 relatively) is shown.  To hide it, set this to a defined but false
 value.
 
+=head2 $StartsButtonsBottomButtons
+
+    # default
+    Set( $StartsButtonsBottomButtons, [
+        # label      => form value
+        [ 'tomorrow' => 'tomorrow'    ],
+        [ 'Monday'   => 'next Monday' ],
+    ] );
+
+    Set( $StartsButtonsBottomButtons, [
+        # label      => form value
+        [ 'tomorrow' => '12am tomorrow'      ],
+        [ 'Saturday' => '12am next Saturday' ],
+        [ 'Monday'   => '12am next Monday'   ],
+    ] );
+
+By default, the bottom row of buttons (excluding the final "reset"
+button) features a "tomorrow" button to set the Starts date to
+"tomorrow," and a "Monday" button to set the Starts date to "next
+Monday."  To customise these buttons, set this accordingly in the
+manner shown above.
+
+The "label" is the value shown on the button in the interface.  The
+"form value" is what an RT user would enter into the Starts field on
+the Dates page.
+
 =head1 AUTHOR
 Torsten Brumm <tbrumm@mac.com>  based on original Idea from:
 Daniel De Marco <ddm@didiemme.net>
