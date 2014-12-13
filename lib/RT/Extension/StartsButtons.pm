@@ -114,8 +114,8 @@ string.
 
 =head1 AUTHOR
 
-Torsten Brumm <tbrumm@mac.com>  based on original Idea from:
-Daniel De Marco <ddm@didiemme.net>
+Torsten Brumm <tbrumm@mac.com> and Alex Peters <lxp@cpan.org>, based on
+original idea from Daniel De Marco <ddm@didiemme.net>
 
 =head1 BUGS AND LIMITATIONS
 
