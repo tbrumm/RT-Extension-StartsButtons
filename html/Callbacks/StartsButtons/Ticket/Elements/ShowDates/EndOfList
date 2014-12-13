@@ -28,14 +28,19 @@
 </table>
 <table>
 <tr>
+% for (
+%     [ 'tomorrow' => 'tomorrow'    ],
+% ) {
+%     my ($label, $new_value) = @$_;
 <td>
 <form method="post" action="Display.html">
 <input type="hidden" name="id" value="<% $Ticket->id %>">
-<input type="hidden" name="Starts_Date" value="tomorrow">
+<input type="hidden" name="Starts_Date" value="<% $new_value %>">
 <input type="hidden" name="Status" value="stalled">
-<input type="submit" value="tomorrow" name="AddToStartsDate">
+<input type="submit" value="<% $label %>" name="AddToStartsDate">
 </form>
 </td>
+% }
 <td>
 <form method="post" action="Display.html">
 <input type="hidden" name="id" value="<% $Ticket->id %>">
