@@ -10,7 +10,7 @@
 % $starts = $Ticket->StartsObj;
 % if ($starts->Unix == 0) { $starts->SetToNow; }
 % $starts->AddDays(1);
-<input type="hidden" name="Starts_Date" value="<% $starts->AsString %>">
+<input type="hidden" name="Starts_Date" value="<% $starts->ISO( Timezone => 'user' ) %>">
 <input type="hidden" name="Status" value="stalled">
 <input type="submit" value="+1d" name="AddToStartsDate">
 </form>
@@ -21,7 +21,7 @@
 % $starts = $Ticket->StartsObj;
 % if ($starts->Unix == 0) { $starts->SetToNow; }
 % $starts->AddDays(2);
-<input type="hidden" name="Starts_Date" value="<% $starts->AsString %>">
+<input type="hidden" name="Starts_Date" value="<% $starts->ISO( Timezone => 'user' ) %>">
 <input type="hidden" name="Status" value="stalled">
 <input type="submit" value="+2d" name="AddToStartsDate">
 </form>
@@ -32,7 +32,7 @@
 % $starts = $Ticket->StartsObj;
 % if ($starts->Unix == 0) { $starts->SetToNow; }
 % $starts->AddDays(3);
-<input type="hidden" name="Starts_Date" value="<% $starts->AsString %>">
+<input type="hidden" name="Starts_Date" value="<% $starts->ISO( Timezone => 'user' ) %>">
 <input type="hidden" name="Status" value="stalled">
 <input type="submit" value="+3d" name="AddToStartsDate">
 </form>
@@ -43,7 +43,7 @@
 % $starts = $Ticket->StartsObj;
 % if ($starts->Unix == 0) { $starts->SetToNow; }
 % $starts->AddDays(7);
-<input type="hidden" name="Starts_Date" value="<% $starts->AsString %>">
+<input type="hidden" name="Starts_Date" value="<% $starts->ISO( Timezone => 'user' ) %>">
 <input type="hidden" name="Status" value="stalled">
 <input type="submit" value="+1w" name="AddToStartsDate">
 </form>
@@ -54,7 +54,7 @@
 % $starts = $Ticket->StartsObj;
 % if ($starts->Unix == 0) { $starts->SetToNow; }
 % $starts->AddDays(30);
-<input type="hidden" name="Starts_Date" value="<% $starts->AsString %>">
+<input type="hidden" name="Starts_Date" value="<% $starts->ISO( Timezone => 'user' ) %>">
 <input type="hidden" name="Status" value="stalled">
 <input type="submit" value="+1m" name="AddToStartsDate">
 </form>
