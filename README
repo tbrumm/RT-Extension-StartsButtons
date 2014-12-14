@@ -30,14 +30,17 @@ INSTALLATION
 
         or add "RT::Extension::StartsButtons" to your existing @Plugins line.
 
+        Optionally change the default settings described in the CONFIGURATION
+        section of the RT::Extension::StartsButtons documentation.
+
     Clear your mason cache
             rm -rf /opt/rt4/var/mason_data/obj
 
     Restart your webserver
 
 AUTHOR
-    Torsten Brumm <tbrumm@mac.com> based on original Idea from:
-    Daniel De Marco <ddm@didiemme.net>
+    Torsten Brumm <tbrumm@mac.com> and Alex Peters <lxp@cpan.org>, based on
+    original idea from Daniel De Marco <ddm@didiemme.net>
 
 BUGS AND LIMITATIONS
     No bugs have been reported.
