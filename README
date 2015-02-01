@@ -16,7 +16,10 @@ DESCRIPTION
 
     All buttons except for the reset one will also set the ticket status to
     Stalled. The reset button does not change the ticket status.
-
+    
+RT VERSION
+    Works with RT 4.0 and 4.2
+    
 INSTALLATION
     perl Makefile.PL
     make
