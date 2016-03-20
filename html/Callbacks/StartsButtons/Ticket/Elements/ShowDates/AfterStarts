@@ -1,7 +1,7 @@
 <tr>
 % my $stall = RT->Config->Get('StartsButtonsStall');
 % $stall = 1 if not defined $stall;
-<td class="label" style="vertical-align: top;"><% $stall ? 'Stall &amp;<br>' : '' %>Update Starts<br>Date to:</td>
+<td class="label" style="vertical-align: top;">Stall &amp;<br>Update Starts<br>Date to:</td>
 <td>
 % my $show_top_row = RT->Config->Get('StartsButtonsShowTopRow');
 % if ($show_top_row or not defined $show_top_row) {
