@@ -18,7 +18,7 @@ DESCRIPTION
     Stalled. The reset button does not change the ticket status.
     
 RT VERSION
-    Works with RT 4.0 and 4.2
+    Works with RT 4.X
     
 INSTALLATION
     perl Makefile.PL
