@@ -2,7 +2,17 @@ use strict;
 use warnings;
 package RT::Extension::StartsButtons;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
+
+$RT::Config::META{'StartsDateButtons'} = {
+    Section         => 'Ticket display',
+    Overridable     => 1,
+    Widget          => '/Widgets/Form/Boolean',
+    WidgetArguments => {
+        Description => 'Display Starts Date Buttons at Dates Widget', # loc
+        Hints       => '(' . __PACKAGE__ . ')',
+    },
+};
 
 =head1 NAME
 
